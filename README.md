@@ -33,8 +33,8 @@ Pad Party is a modern, responsive web application built with cutting-edge techno
 
 | Category | Status |
 |----------|--------|
-| Production Dependencies | ![99%](https://progress-bar.dev/99?title=) |
-| Development Dependencies | ![100%](https://progress-bar.dev/100?title=) |
+| Production Dependencies | ![99%](https://img.shields.io/badge/dependencies-99%25-brightgreen) |
+| Development Dependencies | ![100%](https://img.shields.io/badge/dependencies-100%25-brightgreen) |
 | Build Status | ![Success](https://img.shields.io/badge/build-success-brightgreen) |
 | Code Quality | ![A+](https://img.shields.io/badge/code%20quality-A%2B-brightgreen) |
 
