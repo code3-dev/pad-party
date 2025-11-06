@@ -79,7 +79,7 @@ export function MusicPlayer() {
   const [progress, setProgress] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [volume, setVolume] = useState(75)
+  const [volume, setVolume] = useState(100)
   const [isMuted, setIsMuted] = useState(false)
   const [isRepeat, setIsRepeat] = useState(false)
   const [isShuffle, setIsShuffle] = useState(false)
@@ -442,7 +442,7 @@ export function MusicPlayer() {
               </Button>
             </div>
 
-            <div className="flex items-center justify-between gap-6 pt-8 border-t-2 border-primary/30">
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t-2 border-primary/30">
               <div className="flex items-center gap-3">
                 <Button
                   size="icon"
@@ -466,7 +466,7 @@ export function MusicPlayer() {
                 </Button>
               </div>
 
-              <div className="flex items-center gap-4 flex-1 max-w-xs">
+              <div className="flex items-center gap-4 flex-1 min-w-[200px]">
                 <Button
                   size="icon"
                   variant="ghost"
@@ -481,7 +481,7 @@ export function MusicPlayer() {
                   max={100}
                   className="flex-1"
                 />
-                <span className="font-mono text-xs text-muted-foreground w-10 text-right">{isMuted ? 0 : volume}%</span>
+                <span className="font-mono text-xs text-muted-foreground w-10 text-right min-w-[40px]">{isMuted ? 0 : volume}%</span>
               </div>
 
               <Button
@@ -533,7 +533,7 @@ export function MusicPlayer() {
                         : "border-muted"
                     }`}
                   >
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="flex items-center gap-5">
                         <span
                           className={`font-mono text-base w-10 ${
@@ -547,7 +547,7 @@ export function MusicPlayer() {
                           <p className="text-sm text-muted-foreground font-mono tracking-wide">{t.artist}</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-5">
+                      <div className="flex items-center gap-5 sm:ml-auto">
                         <span
                           className={`font-mono text-xs px-3 py-2 border-2 ${
                             currentTrack === index
