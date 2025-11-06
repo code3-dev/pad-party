@@ -1,0 +1,518 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Enhanced authentic prison color palette - darker concrete, industrial steel, rust, warning colors */
+  --background: oklch(0.15 0.01 240);
+  --foreground: oklch(0.92 0.005 60);
+  --card: oklch(0.13 0.015 240);
+  --card-foreground: oklch(0.92 0.005 60);
+  --popover: oklch(0.13 0.015 240);
+  --popover-foreground: oklch(0.92 0.005 60);
+  --primary: oklch(0.65 0.2 75);
+  --primary-foreground: oklch(0.1 0.01 240);
+  --secondary: oklch(0.25 0.02 240);
+  --secondary-foreground: oklch(0.92 0.005 60);
+  --muted: oklch(0.2 0.015 240);
+  --muted-foreground: oklch(0.5 0.01 60);
+  --accent: oklch(0.55 0.24 25);
+  --accent-foreground: oklch(0.98 0.005 60);
+  --destructive: oklch(0.55 0.28 25);
+  --destructive-foreground: oklch(0.98 0.005 60);
+  --border: oklch(0.3 0.02 240);
+  --input: oklch(0.3 0.02 240);
+  --ring: oklch(0.65 0.2 75);
+  --chart-1: oklch(0.65 0.2 75);
+  --chart-2: oklch(0.55 0.24 25);
+  --chart-3: oklch(0.4 0.15 240);
+  --chart-4: oklch(0.5 0.01 60);
+  --chart-5: oklch(0.3 0.02 240);
+  --radius: 0rem;
+  --sidebar: oklch(0.13 0.015 240);
+  --sidebar-foreground: oklch(0.92 0.005 60);
+  --sidebar-primary: oklch(0.65 0.2 75);
+  --sidebar-primary-foreground: oklch(0.1 0.01 240);
+  --sidebar-accent: oklch(0.2 0.015 240);
+  --sidebar-accent-foreground: oklch(0.92 0.005 60);
+  --sidebar-border: oklch(0.3 0.02 240);
+  --sidebar-ring: oklch(0.65 0.2 75);
+}
+
+.dark {
+  --background: oklch(0.1 0.015 240);
+  --foreground: oklch(0.9 0.005 60);
+  --card: oklch(0.12 0.015 240);
+  --card-foreground: oklch(0.9 0.005 60);
+  --popover: oklch(0.1 0.015 240);
+  --popover-foreground: oklch(0.9 0.005 60);
+  --primary: oklch(0.7 0.22 75);
+  --primary-foreground: oklch(0.1 0.01 240);
+  --secondary: oklch(0.24 0.02 240);
+  --secondary-foreground: oklch(0.9 0.005 60);
+  --muted: oklch(0.16 0.015 240);
+  --muted-foreground: oklch(0.52 0.01 60);
+  --accent: oklch(0.6 0.26 25);
+  --accent-foreground: oklch(0.98 0.005 60);
+  --destructive: oklch(0.6 0.3 25);
+  --destructive-foreground: oklch(0.98 0.005 60);
+  --border: oklch(0.24 0.02 240);
+  --input: oklch(0.24 0.02 240);
+  --ring: oklch(0.7 0.22 75);
+  --chart-1: oklch(0.7 0.22 75);
+  --chart-2: oklch(0.6 0.26 25);
+  --chart-3: oklch(0.4 0.15 240);
+  --chart-4: oklch(0.52 0.01 60);
+  --chart-5: oklch(0.24 0.02 240);
+  --sidebar: oklch(0.12 0.015 240);
+  --sidebar-foreground: oklch(0.9 0.005 60);
+  --sidebar-primary: oklch(0.7 0.22 75);
+  --sidebar-primary-foreground: oklch(0.1 0.01 240);
+  --sidebar-accent: oklch(0.16 0.015 240);
+  --sidebar-accent-foreground: oklch(0.9 0.005 60);
+  --sidebar-border: oklch(0.24 0.02 240);
+  --sidebar-ring: oklch(0.7 0.22 75);
+}
+
+@theme inline {
+  --font-sans: "Space Grotesk", "Space Grotesk Fallback";
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Added subtle concrete texture to body */
+    background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+  }
+}
+
+/* Enhanced prison-themed animations with more dramatic and authentic effects */
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+    filter: blur(0px);
+  }
+  10% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(2px);
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+    filter: blur(0px);
+  }
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translate(5px, 5px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(5px, -5px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes bars-slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0.3;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes security-sweep {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.5;
+  }
+}
+
+@keyframes warning-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 200, 0, 0.7);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px 10px rgba(255, 200, 0, 0);
+  }
+}
+
+@keyframes lockdown {
+  0%,
+  100% {
+    box-shadow: 0 0 30px rgba(255, 200, 0, 0.4), inset 0 0 20px rgba(255, 200, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255, 200, 0, 0.8), inset 0 0 40px rgba(255, 200, 0, 0.2);
+  }
+}
+
+@keyframes spotlight {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes camera-scan {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(-35deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(35deg);
+  }
+}
+
+@keyframes gate-open {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes siren {
+  0%,
+  100% {
+    background-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+  }
+  50% {
+    background-color: rgba(255, 200, 0, 0.4);
+    box-shadow: 0 0 40px rgba(255, 200, 0, 0.6);
+  }
+}
+
+@keyframes concrete-texture {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes chain-swing {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes fingerprint-scan {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Added new prison-specific animations */
+@keyframes cell-door-slam {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-100%);
+  }
+  20% {
+    transform: translateX(-95%);
+  }
+  30% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes searchlight-sweep {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(200%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes alarm-flash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes metal-clang {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes surveillance-blink {
+  0%,
+  90%,
+  100% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes barbed-wire-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lockdown-alert {
+  0%,
+  100% {
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    border-color: rgba(255, 200, 0, 0.8);
+    box-shadow: 0 0 40px rgba(255, 200, 0, 0.6);
+  }
+}
+
+@keyframes prisoner-march {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes security-grid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 60px;
+  }
+}
+
+@keyframes rust-spread {
+  0% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  100% {
+    filter: hue-rotate(20deg) saturate(1.2);
+  }
+}
+
+@keyframes electric-fence {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(100, 200, 255, 0.5), inset 0 0 5px rgba(100, 200, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(100, 200, 255, 0.8), inset 0 0 10px rgba(100, 200, 255, 0.6);
+  }
+}
+
+@keyframes watchtower-light {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes concrete-crack {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes steel-shine {
+  0%,
+  100% {
+    background-position: -200% center;
+  }
+  50% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes prison-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes cell-block-reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes security-scan-horizontal {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
